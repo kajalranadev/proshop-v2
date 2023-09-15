@@ -1,1 +1,1 @@
-# proshop-v2
+# proshop-demo
