@@ -17,6 +17,15 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const item = action.payload;
+
+      // Ensure the 'products' field is included for each item
+      item.products = {
+        // Add product details like 'name', 'price', 'image', etc.
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        // Add other relevant fields here
+      };
       const existItem = state.cartItems.find((x) => x._id === item._id);
 
       if (existItem) {
